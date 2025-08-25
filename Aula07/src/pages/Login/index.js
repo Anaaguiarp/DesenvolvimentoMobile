@@ -1,9 +1,9 @@
-import { Image, StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text, Image, TextInput, TouchableOpacity } from "react-native";
 
-import { AntDesign } from '@expo/vector-icons';
+import {AntDesign} from "@expo/vector-icons";
 
-export default function Login(){
-    return(
+export default function Login() {
+    return (
         <View style={Estilo.container}>
             <View style={Estilo.header}>
                 <Image 
@@ -13,16 +13,15 @@ export default function Login(){
                 <Text style={Estilo.txtLogin}>Login</Text>
             </View>
             <View style={Estilo.body}>
-                <Text style={Estilo.label}>E-mail:</Text>
+                <Text style={Estilo.label}>Username:</Text>
                 <TextInput 
                     style={Estilo.input}
-                    placeholder="Enter your E-mail"
-                    keyboardType="email-adress"
+                    placeholder="Enter your Username"
+                    keyboardType="email-address"
                     autoCapitalize="none"
                     autoComplete="off"
                 />
-
-                <Text style={Estilo.label}>Password</Text>
+                <Text style={Estilo.label}>Password:</Text>
                 <TextInput 
                     style={Estilo.input}
                     placeholder="**********"
@@ -33,37 +32,39 @@ export default function Login(){
                     autoCorrect={false}
                 />
                 <View style={Estilo.labelForgotContainer}>
-                    <TouchableOpacity> {/* Transforma o que estiver dentro da tag em link/botão */}
+                    <TouchableOpacity>
                         <Text style={Estilo.labelForgot}>Forgot Password?</Text>
                     </TouchableOpacity>
                 </View>
-                <View style={Estilo.footer}>
-                    <View style={Estilo.socialButtonsContainer}>
-                        <TouchableOpacity style={Estilo.socialButton}>
-                            <AntDesign 
-                                name="google" 
-                                style={Estilo.socialIcon} 
-                                size={20}
-                            />
-                        </TouchableOpacity>
-                        <TouchableOpacity style={Estilo.socialButton}>
-                            <AntDesign 
-                                name="facebook-square" 
-                                style={Estilo.socialIcon} 
-                                size={20}
-                            />
-                        </TouchableOpacity>
-                        <TouchableOpacity style={Estilo.socialButton}>
-                            <AntDesign 
-                                name="instagram" 
-                                style={Estilo.socialIcon} 
-                                size={20}
-                            />
-                        </TouchableOpacity>
-                    </View>
-                    <View style={Estilo.sendFormContainer}>
-
-                    </View>
+            </View>
+            <View style={Estilo.footer}>
+                <View style={Estilo.socialButtonsContainer}>
+                    <TouchableOpacity style={Estilo.socialButton}>
+                        <AntDesign 
+                            name="google" 
+                            style={Estilo.socialIcon} 
+                            size={20}    
+                        />
+                    </TouchableOpacity>
+                    <TouchableOpacity style={Estilo.socialButton}>
+                        <AntDesign 
+                            name="facebook-square" 
+                            style={Estilo.socialIcon} 
+                            size={20}    
+                        />
+                    </TouchableOpacity>
+                    <TouchableOpacity style={Estilo.socialButton}>
+                        <AntDesign 
+                            name="instagram" 
+                            style={Estilo.socialIcon} 
+                            size={20}    
+                        />
+                    </TouchableOpacity>
+                </View>
+                <View style={Estilo.sendFormContainer}>
+                    <TouchableOpacity style={Estilo.sendButton}>
+                        <Text style={Estilo.sendButtonText}>Login</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         </View>
@@ -78,7 +79,8 @@ const Estilo = StyleSheet.create({
     },
     imgLogo: {
         width: 200,
-        height: 200
+        height: 200,
+        marginBottom: 80
     },
     txtLogin: {
         fontSize: 26,
@@ -90,11 +92,12 @@ const Estilo = StyleSheet.create({
     body: {
         textAlign: 'left',
         alignItems: 'flex-start',
-        width: '80%'
+        width: '80%',
+        marginBottom: 40
     },
     label: {
         fontSize: 14,
-        color: '#7A7A78',
+        color: "#7A7A78",
         marginBottom: 6
     },
     input: {
@@ -102,8 +105,8 @@ const Estilo = StyleSheet.create({
         width: '100%',
         height: 40,
         padding: 10,
-        color: '#7A7A78',
-        borderColor: '#C2DDEE',
+        color: "#7A7A78",
+        borderColor: "#C2DDEE",
         borderWidth: 2,
         borderRadius: 10,
         marginBottom: 20
@@ -114,33 +117,49 @@ const Estilo = StyleSheet.create({
         width: '100%'
     },
     labelForgot: {
-        color: '#8EBFDD'
+        color: "#8EBFDD"
     },
     footer: {
-        borderTopColor: '#D4E4F1',
+        borderTopColor: "#D4E4F1",
         borderTopWidth: 1,
-        width: '100%'
+        width: "100%"
     },
     socialIcon: {
-        color: '#51BCF4'
+        color: "#51BCF4"
     },
     socialButton: {
-        width: '80',
-        height: '80',
-        backgroundColor: '#B7E7FE',
+        width: "80",
+        height: "80",
+        backgroundColor: "#B7E7FE",
         padding: 6,
-        borderColor: '#A8D1E3',
+        borderColor: "#A8D1E3",
         borderWidth: 2,
         borderRadius: 10,
+        justifyContent: 'center',
         alignItems: 'center'
     },
     socialButtonsContainer: {
-        flexDirection: 'row',
+        flexDirection: "row",
         marginTop: 20,
         padding: 20,
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: 20
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 30
+    },
+    sendButton: {
+        backgroundColor: "#009AC8",
+        width: "80%",
+        height: 50,
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: 25
+    },
+    sendButtonText:{
+        color: "#fff",
+        fontWeight: "bold"
+    },
+    sendFormContainer: {
+        justifyContent: "center",
+        alignItems: "center"
     }
-
-});
+})
