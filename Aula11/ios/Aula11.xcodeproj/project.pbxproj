@@ -168,6 +168,11 @@
 			files = (
 			);
 			inputPaths = (
+<<<<<<< HEAD
+				"$(SRCROOT)/.xcode.env",
+				"$(SRCROOT)/.xcode.env.local",
+=======
+>>>>>>> 6d85a3520b16b1dd01fe12634577915684e1b321
 			);
 			name = "Bundle React Native code and images";
 			outputPaths = (
